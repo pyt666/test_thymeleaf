@@ -1,0 +1,19 @@
+# 热部署文件，页面不产生缓存，及时更新
+spring:
+  thymeleaf:
+    cache: false
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+  datasource:
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test_thymeleaf?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
